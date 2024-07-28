@@ -9,6 +9,7 @@ const (
 	BOOLEAN_OBJ      = "BOOLEAN"
 	NULL_OBJ         = "NULL"
 	RETURN_VALUE_OBJ = "RETURN_VALUE"
+	ERROR_OBJ        = "ERROR"
 )
 
 type ObjectType string
@@ -32,6 +33,10 @@ type ReturnValue struct {
 	Value Object
 }
 
+type Error struct {
+	Message string
+}
+
 // integer
 func (i *Integer) Type() ObjectType { return INTEGER_OBJ }
 func (i *Integer) Inspect() string  { return fmt.Sprintf("%d", i.Value) }
@@ -47,3 +52,7 @@ func (n *Null) Inspect() string  { return "null" }
 // return value
 func (rv *ReturnValue) Type() ObjectType { return RETURN_VALUE_OBJ }
 func (rv *ReturnValue) Inspect() string  { return rv.Value.Inspect() }
+
+// error
+func (e *Error) Type() ObjectType { return ERROR_OBJ }
+func (e *Error) Inspect() string  { return "ERROR: " + e.Message }
