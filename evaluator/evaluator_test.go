@@ -67,6 +67,21 @@ func TestEvalBooleanExpression(t *testing.T) {
 
 }
 
+func TestStringExpression(t *testing.T) {
+	input := `"Hello World!"`
+
+	evaluated := testEval(input)
+	str, ok := evaluated.(*object.String)
+
+	if !ok {
+		t.Fatalf("object is not String, got=%s", evaluated.Type())
+	}
+
+	if str.Value != "hello world" {
+		t.Errorf("String has wrong value. got=%q", str.Value)
+	}
+}
+
 func TestBangOperator(t *testing.T) {
 	tests := []struct {
 		input    string

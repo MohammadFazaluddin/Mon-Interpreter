@@ -93,6 +93,11 @@ type CallExpression struct {
 	Arguments []Expression
 }
 
+type StringLiteral struct {
+	Token token.Token
+	Value string
+}
+
 // program
 func (p *Program) TokenLiteral() string {
 	if len(p.Statements) > 0 {
@@ -280,3 +285,8 @@ func (ce *CallExpression) String() string {
 	return out.String()
 
 }
+
+// string
+func (sl *StringLiteral) expressionNode()      {}
+func (sl *StringLiteral) TokenLiteral() string { return sl.Token.Literal }
+func (sl *StringLiteral) String() string       { return sl.Token.Literal }
