@@ -37,6 +37,9 @@ const (
 	LBRACE = "{"
 	RBRACE = "}"
 
+	LBRACKET = "["
+	RBRACKET = "]"
+
 	COMMA     = ","
 	SEMICOLON = ";"
 
