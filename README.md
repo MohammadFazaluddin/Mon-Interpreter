@@ -32,8 +32,9 @@ Following are the major parts:
 4. The Internal Object System
 5. The Evaluator
 
+## Breakdown of Features 👀
 
-1. **The Lexer:** Tokenizes the Monkey Source code to the tokens also known as "Lexical Analysis" or "Lexing".
+1. **The Lexer:** The first transformation from source code to Tokens, called as "Lexical Analysis", or "Lexing" for short. Done by Lexer, also called tokenizer or scanner. Tokens are small, easily categorizable data structures.
 
 2. **The Parser:** The Tokens transformed from the lexer is fed to the parser, which does the second transformation and turn the token into "Abstract Syntax Tree".
 
