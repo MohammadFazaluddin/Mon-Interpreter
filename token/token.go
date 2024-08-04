@@ -42,6 +42,7 @@ const (
 
 	COMMA     = ","
 	SEMICOLON = ";"
+	COLON     = ":"
 
 	// keywords
 	FUNCTION = "FUNCTION"
