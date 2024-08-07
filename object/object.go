@@ -81,7 +81,7 @@ type HashPair struct {
 }
 
 type Hash struct {
-	Pair map[HashKey]HashPair
+	Pairs map[HashKey]HashPair
 }
 
 // integer
@@ -179,7 +179,7 @@ func (h *Hash) Inspect() string {
 	var out bytes.Buffer
 
 	pairs := []string{}
-	for _, pair := range h.Pair {
+	for _, pair := range h.Pairs {
 		pairs = append(pairs, fmt.Sprintf("%s: %s",
 			pair.Key.Inspect(), pair.Value.Inspect()))
 	}
